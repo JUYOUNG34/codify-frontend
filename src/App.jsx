@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import EmailVerificationPage from './pages/EmailVerificationPage';
 const Dashboard = () => (
     <div className="min-h-screen bg-gray-50 p-8">
         <div className="max-w-4xl mx-auto">
@@ -38,88 +40,6 @@ const Dashboard = () => (
                         <a href="/profile" className="text-blue-600 hover:text-blue-700 font-medium">프로필</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-);
-
-const Login = () => (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md w-full space-y-8 p-8">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">로그인</h2>
-                <form className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">이메일</label>
-                        <input
-                            type="email"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="이메일을 입력하세요"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">비밀번호</label>
-                        <input
-                            type="password"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="비밀번호를 입력하세요"
-                        />
-                    </div>
-                    <button
-                        type="submit"
-                        className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                        로그인
-                    </button>
-                </form>
-                <p className="mt-4 text-center text-sm text-gray-600">
-                    계정이 없으신가요? <a href="/register" className="text-blue-600 hover:text-blue-700">회원가입</a>
-                </p>
-            </div>
-        </div>
-    </div>
-);
-
-const Register = () => (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md w-full space-y-8 p-8">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">회원가입</h2>
-                <form className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">이메일</label>
-                        <input
-                            type="email"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="이메일을 입력하세요"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">닉네임</label>
-                        <input
-                            type="text"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="닉네임을 입력하세요"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">비밀번호</label>
-                        <input
-                            type="password"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="비밀번호를 입력하세요"
-                        />
-                    </div>
-                    <button
-                        type="submit"
-                        className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                        회원가입
-                    </button>
-                </form>
-                <p className="mt-4 text-center text-sm text-gray-600">
-                    이미 계정이 있으신가요? <a href="/login" className="text-blue-600 hover:text-blue-700">로그인</a>
-                </p>
             </div>
         </div>
     </div>
@@ -255,9 +175,10 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/register" element={<RegisterPage />} />
                     <Route path="/chat" element={<Chat />} />
+                    <Route path="/verify-email" element={<EmailVerificationPage />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/404" element={<NotFound />} />
                     <Route path="*" element={<Navigate to="/404" replace />} />
