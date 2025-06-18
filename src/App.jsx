@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import HomePage from './pages/HomePage';
 
-
-const Home = () => (
+const Dashboard = () => (
     <div className="min-h-screen bg-gray-50 p-8">
         <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-primary-600 mb-8">🚀 Codify 프론트엔드</h1>
-            <div className="bg-white rounded-lg shadow-soft p-6">
+            <h1 className="text-4xl font-bold text-blue-600 mb-8">🚀 Codify 프론트엔드</h1>
+            <div className="bg-white rounded-lg shadow-lg p-6">
                 <h2 className="text-2xl font-semibold mb-4">프로젝트 현황</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="p-4 bg-green-50 rounded-lg border border-green-200">
@@ -15,7 +15,7 @@ const Home = () => (
                             <li>• React 18 + Vite 설정</li>
                             <li>• Tailwind CSS 디자인 시스템</li>
                             <li>• React Router 라우팅</li>
-                            <li>• 기본 프로젝트 구조</li>
+                            <li>• 홈페이지 완성</li>
                         </ul>
                     </div>
                     <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
@@ -31,10 +31,11 @@ const Home = () => (
                 <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                     <h3 className="font-semibold text-gray-800 mb-2">📋 기능 링크</h3>
                     <div className="flex space-x-4">
-                        <a href="/login" className="text-primary-600 hover:text-primary-700 font-medium">로그인</a>
-                        <a href="/register" className="text-primary-600 hover:text-primary-700 font-medium">회원가입</a>
-                        <a href="/chat" className="text-primary-600 hover:text-primary-700 font-medium">채팅</a>
-                        <a href="/profile" className="text-primary-600 hover:text-primary-700 font-medium">프로필</a>
+                        <a href="/" className="text-blue-600 hover:text-blue-700 font-medium">홈페이지</a>
+                        <a href="/login" className="text-blue-600 hover:text-blue-700 font-medium">로그인</a>
+                        <a href="/register" className="text-blue-600 hover:text-blue-700 font-medium">회원가입</a>
+                        <a href="/chat" className="text-blue-600 hover:text-blue-700 font-medium">채팅</a>
+                        <a href="/profile" className="text-blue-600 hover:text-blue-700 font-medium">프로필</a>
                     </div>
                 </div>
             </div>
@@ -45,14 +46,14 @@ const Home = () => (
 const Login = () => (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="max-w-md w-full space-y-8 p-8">
-            <div className="bg-white rounded-lg shadow-medium p-8">
+            <div className="bg-white rounded-lg shadow-lg p-8">
                 <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">로그인</h2>
                 <form className="space-y-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">이메일</label>
                         <input
                             type="email"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="이메일을 입력하세요"
                         />
                     </div>
@@ -60,19 +61,19 @@ const Login = () => (
                         <label className="block text-sm font-medium text-gray-700 mb-1">비밀번호</label>
                         <input
                             type="password"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="비밀번호를 입력하세요"
                         />
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-primary-600 text-white py-2 px-4 rounded-lg hover:bg-primary-700 transition-colors"
+                        className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
                     >
                         로그인
                     </button>
                 </form>
                 <p className="mt-4 text-center text-sm text-gray-600">
-                    계정이 없으신가요? <a href="/register" className="text-primary-600 hover:text-primary-700">회원가입</a>
+                    계정이 없으신가요? <a href="/register" className="text-blue-600 hover:text-blue-700">회원가입</a>
                 </p>
             </div>
         </div>
@@ -82,14 +83,14 @@ const Login = () => (
 const Register = () => (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="max-w-md w-full space-y-8 p-8">
-            <div className="bg-white rounded-lg shadow-medium p-8">
+            <div className="bg-white rounded-lg shadow-lg p-8">
                 <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">회원가입</h2>
                 <form className="space-y-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">이메일</label>
                         <input
                             type="email"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="이메일을 입력하세요"
                         />
                     </div>
@@ -97,7 +98,7 @@ const Register = () => (
                         <label className="block text-sm font-medium text-gray-700 mb-1">닉네임</label>
                         <input
                             type="text"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="닉네임을 입력하세요"
                         />
                     </div>
@@ -105,19 +106,19 @@ const Register = () => (
                         <label className="block text-sm font-medium text-gray-700 mb-1">비밀번호</label>
                         <input
                             type="password"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="비밀번호를 입력하세요"
                         />
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-primary-600 text-white py-2 px-4 rounded-lg hover:bg-primary-700 transition-colors"
+                        className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
                     >
                         회원가입
                     </button>
                 </form>
                 <p className="mt-4 text-center text-sm text-gray-600">
-                    이미 계정이 있으신가요? <a href="/login" className="text-primary-600 hover:text-primary-700">로그인</a>
+                    이미 계정이 있으신가요? <a href="/login" className="text-blue-600 hover:text-blue-700">로그인</a>
                 </p>
             </div>
         </div>
@@ -128,9 +129,8 @@ const Chat = () => (
     <div className="min-h-screen bg-gray-50 p-6">
         <div className="max-w-6xl mx-auto">
             <h1 className="text-3xl font-bold text-gray-900 mb-6">💬 채팅</h1>
-            <div className="bg-white rounded-lg shadow-medium overflow-hidden">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="flex h-96">
-                    {/* 채팅방 목록 */}
                     <div className="w-1/3 border-r border-gray-200 p-4">
                         <h3 className="font-semibold text-gray-800 mb-4">채팅방 목록</h3>
                         <div className="space-y-2">
@@ -143,7 +143,6 @@ const Chat = () => (
                         </div>
                     </div>
 
-                    {/* 채팅 영역 */}
                     <div className="flex-1 flex flex-col">
                         <div className="p-4 border-b border-gray-200">
                             <h3 className="font-semibold text-gray-800">Java 개발자 모임</h3>
@@ -157,7 +156,7 @@ const Chat = () => (
                                     { user: '개발자C', message: 'JPA에서 N+1 문제 해결 방법이 궁금해요.', time: '14:35' },
                                 ].map((msg, i) => (
                                     <div key={i} className="flex space-x-3">
-                                        <div className="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center text-white text-sm">
+                                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm">
                                             {msg.user[2]}
                                         </div>
                                         <div>
@@ -175,10 +174,10 @@ const Chat = () => (
                             <div className="flex space-x-2">
                                 <input
                                     type="text"
-                                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     placeholder="메시지를 입력하세요..."
                                 />
-                                <button className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700">
+                                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
                                     전송
                                 </button>
                             </div>
@@ -194,9 +193,9 @@ const Profile = () => (
     <div className="min-h-screen bg-gray-50 p-6">
         <div className="max-w-4xl mx-auto">
             <h1 className="text-3xl font-bold text-gray-900 mb-6">👤 프로필</h1>
-            <div className="bg-white rounded-lg shadow-medium p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6">
                 <div className="flex items-center space-x-6 mb-6">
-                    <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                    <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                         개
                     </div>
                     <div>
@@ -215,8 +214,8 @@ const Profile = () => (
                         <h3 className="font-semibold text-gray-800 mb-3">기본 정보</h3>
                         <div className="space-y-2 text-sm">
                             <div><span className="text-gray-600">경력:</span> 미들 (3-5년)</div>
-                            <div><span className="text-gray-600">GitHub:</span> <a href="#" className="text-primary-600">@developer</a></div>
-                            <div><span className="text-gray-600">포트폴리오:</span> <a href="#" className="text-primary-600">portfolio.dev</a></div>
+                            <div><span className="text-gray-600">GitHub:</span> <a href="#" className="text-blue-600">@developer</a></div>
+                            <div><span className="text-gray-600">포트폴리오:</span> <a href="#" className="text-blue-600">portfolio.dev</a></div>
                         </div>
                     </div>
 
@@ -241,7 +240,7 @@ const NotFound = () => (
             <p className="text-xl text-gray-600 mb-8">페이지를 찾을 수 없습니다</p>
             <a
                 href="/"
-                className="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
                 홈으로 돌아가기
             </a>
@@ -249,13 +248,13 @@ const NotFound = () => (
     </div>
 );
 
-// 메인 앱 컴포넌트
 const App = () => {
     return (
         <Router>
             <div className="App">
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/chat" element={<Chat />} />
